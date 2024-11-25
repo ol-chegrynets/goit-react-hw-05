@@ -8,7 +8,7 @@ import {
   NavLink,
 } from 'react-router-dom';
 import { fetchMovieDetails } from '../../services/api';
-import Moment from 'moment';
+// import Moment from 'moment';
 import MovieCast from '../../components/MovieCast/MovieCast';
 import MovieReviews from '../../components/MovieReviews/MovieReviews';
 import Loader from '../../components/Loader/Loader';
