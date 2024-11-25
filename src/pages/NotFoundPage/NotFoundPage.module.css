@@ -1,0 +1,13 @@
+.notFound {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.link {
+    text-decoration: none;
+    padding: 25px;
+    color: rgb(224, 13, 200);
+    font-size: 20px;
+    font-weight: bold;
+}
