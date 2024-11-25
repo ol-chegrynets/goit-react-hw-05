@@ -1,13 +1,14 @@
 import { useEffect, useState, Suspense, useRef } from 'react';
 import {
   useParams,
-  Link,
   Route,
   Routes,
   useLocation,
   useNavigate,
+  NavLink,
 } from 'react-router-dom';
 import { fetchMovieDetails } from '../../services/api';
+import Moment from 'moment';
 import MovieCast from '../../components/MovieCast/MovieCast';
 import MovieReviews from '../../components/MovieReviews/MovieReviews';
 import Loader from '../../components/Loader/Loader';
@@ -66,20 +67,24 @@ const MovieDetailsPage = () => {
           <p className={s.movieGenresText}>
             {movie.genres.map(genre => genre.name).join(', ') || 'N/A'}
           </p>
+          <h4 className={s.movieGenres}> Release Date:</h4>
+          <p className={s.movieGenresText}>
+            {/* {Moment(movie.release_date).format('MMMM Do YYYY')} */}
+          </p>
         </div>
       </div>
       <div className={s.additionalInfo}>
         <h3>Additional information:</h3>
         <ul className={s.additionalLinks}>
           <li>
-            <Link to="cast" state={{ from: backLink }} className={s.link}>
+            <NavLink to="cast" state={{ from: backLink }} className={s.link}>
               Cast
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="reviews" state={{ from: backLink }} className={s.link}>
+            <NavLink to="reviews" state={{ from: backLink }} className={s.link}>
               Reviews
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
